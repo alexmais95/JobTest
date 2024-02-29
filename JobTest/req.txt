@@ -1,0 +1,4 @@
+django==4.2.7
+psycopg2-binary==2.9.9
+pip==22.0.2
+django-dotenv==1.4.2
