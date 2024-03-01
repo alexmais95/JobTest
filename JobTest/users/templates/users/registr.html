@@ -1,0 +1,44 @@
+{% extends "board/main.html" %}
+
+
+
+{% block center %}
+<div class="logg">
+    {% if form.errors %}
+        <p>Your username and password didn't match. Please try again.</p>
+    {% endif %}
+    
+    <div class="regist_user">
+        <form class="form_main_regist" method="post" name="loggin">
+            {% csrf_token %}
+            
+            <div class="form_log">
+                
+                <p>Вигадайте логін</p>
+                {{form.username}}
+            </div>
+            
+            <div class="form_log">
+                
+                <p>Тепер пароль</p>
+                {{form.password1}}
+                
+            </div>
+
+            <div class="form_log">
+                
+                <p>Повторіть пароль</p>
+                {{form.password2}}
+                
+            </div>
+            
+            <div class="form_log">
+                <input class="submit_regist" type="submit" value="Реєстрація">
+                {{form.submit}}
+            </div>
+            
+        </form>
+    </div>
+</div>
+
+{% endblock %}
