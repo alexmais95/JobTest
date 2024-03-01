@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'workerstree',
+    'users',
     'django_seed',
 ]
 
@@ -123,7 +124,16 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = "/home/alexmais/pythonProd/TestProd/static/"
+            
+
+
+STATICFILES_DIRS = (
+    "/home/alexmais/pythonProd/TestProd/JobTest/static/",
+    )
+
+
+STATIC_ROOT = "/home/alexmais/pythonProd/TestProd/static/"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field

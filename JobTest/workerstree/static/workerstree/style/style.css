@@ -1,0 +1,207 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+#header_spaces {
+    background-color: #445F3B;
+    width: 100%;
+    height: 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+}
+
+.header_center {
+   text-align: center;   
+}
+.logo {
+    color:aliceblue;
+}
+.header_right {
+    color: aliceblue;
+    padding-right: 10px;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-decoration: none;
+}
+.user {
+    color: aliceblue;
+}
+
+
+#center_spaces{
+    background-color: #E0EFEA;
+    height: 82vh;
+    width: 100%;
+}
+
+#bottom_spaces{
+    background-color: #445F3B;
+    width: 100%;
+    height: 100px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.bottom {
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    
+}
+.git {
+    text-align: center;
+    margin-top: 5px;
+}
+.git a {
+    text-decoration: none;
+    color: aliceblue;
+}
+.mail {
+    text-align: center;
+    margin-top: 5px;
+    
+}
+.mail a {
+    text-align: center;
+    margin: 5px;
+    text-decoration: none;
+    color: aliceblue;
+}
+
+
+.dad-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-column-gap: 5px;
+    align-items: center;
+    justify-items: center;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    padding:3px ;
+
+}
+
+.menu {
+    height: 560px;
+    width: 360px;
+    background-color: #445F3B;
+    border-radius: 2%;
+    display: grid;
+    grid-template-rows: 1fr 4fr 1fr;
+    font-size: 30px;
+    font-weight: bold;
+    color: aliceblue;
+    justify-items: center;
+}
+
+
+
+
+
+.main-container {
+    display: grid;
+    border-radius: 5px;
+    grid-template-columns: repeat(8, 1fr);
+    height: 560px;
+    width: 560px;
+    overflow: hidden;
+}
+
+
+
+.circle {
+    width: 30%;
+    height: 30%;
+    background-color: rgba(0, 0, 0, 0.152);
+    border-radius: 50%;
+    
+}
+
+.logg{
+    width: 100%;
+    height: 82vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loggin_user {
+
+    width: 250px;
+    height: 350px;
+    background-color: #445F3B;
+    border-radius: 2%;
+    margin: 10px;
+    
+}
+
+.regist_user{
+    width: 250px;
+    height: 400px;
+    background-color: #445F3B;
+    border-radius: 2%;
+    margin: 10px;
+}
+
+.form_main{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    color: aliceblue;
+    font-weight: bold;
+    
+}
+
+.form_main_regist{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    color: aliceblue;
+    font-weight: bold;
+}
+
+.form_log{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    justify-items: center;
+    margin: 5px;
+    padding: 5px;
+    
+}
+
+.log_user {
+    border-radius: 10%;
+    text-align: center;
+}
+
+.submit{
+    width: 30%;
+    border-radius: 20%;
+}
+
+.submit_regist{
+    width: 50%;
+    border-radius: 20%;
+}
+
+.log_out  {
+    text-decoration: none;
+    color: aliceblue;
+}
+.login{
+    text-decoration: none;
+    color: aliceblue;
+}
+.regist{
+    text-decoration: none;
+    color: aliceblue;
+}
+
+

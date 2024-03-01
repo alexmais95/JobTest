@@ -1,0 +1,24 @@
+<div class="header_left">
+        
+</div>
+
+<div class="header_center">
+    <h1 class="logo">WORKERSTREE</h1>
+</div>
+
+<div class="header_right">
+    {% if user.is_authenticated %}
+       <a class="log_out" href="{% url 'users:logout' %}">
+        <h1>Logout</h1>
+       </a>
+        <h1 class="user_name">{{user.username}}</h1>
+    {% else %}
+       <a class="login" href="{% url 'users:login' %}">
+            <h1 class="user">Login</h1>
+       </a> 
+       
+       <a class="regist" href="{% url 'users:regist' %}">
+            <h1 class="user">Registration</h1>
+        </a> 
+    {% endif %}
+</div>

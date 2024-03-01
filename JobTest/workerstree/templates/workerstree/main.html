@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess</title>
+    <link rel="icon" href="data:;base64,=">
+    <link rel="stylesheet" href="{% static 'workerstree/style/style.css' %}" />
+</head>
+<body>
+    <div id="header_spaces">
+        {% include 'workerstree/header/header.html' %}
+    </div>
+    
+    <div id="center_spaces">
+        {% block center %}
+        {% endblock %}
+    </div>
+    
+    <div id="bottom_spaces">
+       
+    </div>
+
+    
+    
+</body>
+</html>
