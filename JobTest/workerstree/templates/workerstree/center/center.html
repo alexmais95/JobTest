@@ -3,6 +3,34 @@
 
 
 {% block center %}
+   
+       
+       
+        <div class="full_inform">
+            <table class="table table-striped">
+                <tr>
+                    <td>ID</td>
+                    <td>Full name</td>
+                    <td>job position</td>
+                    <td>date</td>
+                    <td>email</td>
+                </tr>
+                {% for w in position %}
+                    <tr>
+                        <td>{{w.id}}</td>
+                        <td>{{w.fullName}}</td>
+                        <td>{{w.job_position}}</td>
+                        <td>{{w.date}}</td>
+                        <td>{{w.email}}</td>
+                    </tr>
+                {%endfor%}
+            </table>
 
+            
+
+            
+        </div>
+    
+    
 
 {% endblock %}

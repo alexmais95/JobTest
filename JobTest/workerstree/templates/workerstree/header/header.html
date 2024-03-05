@@ -3,22 +3,22 @@
 </div>
 
 <div class="header_center">
-    <h1 class="logo">WORKERSTREE</h1>
+    <h2 class="logo">WORKERSTREE</h2>
 </div>
 
 <div class="header_right">
     {% if user.is_authenticated %}
        <a class="log_out" href="{% url 'users:logout' %}">
-        <h1>Logout</h1>
+        <h2>Logout</h2>
        </a>
-        <h1 class="user_name">{{user.username}}</h1>
+        <h2 class="user_name">{{user.username}}</h2>
     {% else %}
        <a class="login" href="{% url 'users:login' %}">
-            <h1 class="user">Login</h1>
+            <h2 class="user">Login</h2>
        </a> 
        
        <a class="regist" href="{% url 'users:regist' %}">
-            <h1 class="user">Registration</h1>
+            <h2 class="user">Registration</h2>
         </a> 
     {% endif %}
 </div>

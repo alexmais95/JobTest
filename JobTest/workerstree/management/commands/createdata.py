@@ -12,8 +12,23 @@ class Command(BaseCommand):
         self.fullname = ['Галина Петрівна Кульшенко', 'Ксенія Володимирівна Гура', 'Яков Андрійович Леонов', 'Сергій Леонідович Богза', 
                          'Віктор Анатолійович Перець', 'Яна Олександрівна Барліт', 'Андрій Андрійович Реготун', 'Степан Владиславович Куцьо',
                          'Іван Кирилович Ганущак', 'Олександра Іванівна Старова']
+        self.position = {'Директор': ['director', 5], 
+                        'Заступник директора': ['zamdirect', 100],
+                        'Головний інженер': ['maining', 1000],
+                        'Старший майстер': ['seniormaist', 5000],
+                        'Майстер': ['master', 12000],
+                        'Інженер': ['ingenire', 15000],
+                        'Гірничий': ['mainer', 25000]
+                        }
 
     def handle(self, *args, **kwargs):
+        for key, value in self.position.items():
+            self.seeder.add_entity(Position, 1, {
+                'name': key,
+                'slug': value[0]    
+            })
+            self.seeder.execute()
+        
         position = {
             Director : [1, 'Директор'],
             HeadAssistant : [100, 'Заступник директора', 1],
@@ -23,7 +38,7 @@ class Command(BaseCommand):
             Ingenire: [20000, 'Інженер',13000],
             Miner: [30000, 'Гірничий', 20000]
         }
-
+        count = 1
         for key, value in position.items():
             self.seeder.add_entity(key, value[0], {
                 'fullName': lambda x: random.choice(self.fullname),
@@ -34,10 +49,17 @@ class Command(BaseCommand):
             self.seeder.execute()
             if key == Director:
                 continue
-            for scor in range(0,value[0]):
+            for scor in range(1,value[0]):
                 posit = key.objects.get(pk=scor)
-                posit.boss_id=random.randint(0, value[2])
+                posit.boss_id=random.randint(1, value[2])
+                posit.pos_n_id=count
                 posit.save()
+            count+=1
+       
+       
+           
+            
+         
        
            
 

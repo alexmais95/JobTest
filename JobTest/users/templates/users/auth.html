@@ -9,17 +9,15 @@
     {% endif %}
     
     <div class="loggin_user">
-        <form class="form_main" method="post" name="loggin">
+        <form  class="form_main" method="post" name="loggin">
             {% csrf_token %}
             <div class="form_log">
-                {{form.username.errors}}
                 <label for="{{form.username.id_for_label}}">Ваш логін</label>
                 {{form.username}}
             </div>
             <div class="form_log">
                 
                 <label for="form.password.id_for_label">Ваш пароль</label>
-                {{form.password.errors}}
                 {{form.password}}
                 
             </div>

@@ -1,0 +1,16 @@
+{% extends "workerstree/main.html" %}
+
+
+
+{% block center %}
+    <div class="full_inform">
+        <p>Введіть данні працівника</p>
+        <hr>
+        <form method="post" name="add_workers">
+            {% csrf_token %}
+            {{ form }}
+  
+            <input type="submit" value="Додати працівника">
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "workerstree/main.html" %}
+
+
+
+{% block center %}
+   
+       
+       
+        <div class="full_inform">
+            <table class="table table-striped">
+                <tr>
+                    <td>Position</td>
+                    <td>Full name</td>
+                </tr>
+                {%for n in detail%}
+                    <tr>
+                        <td>{{n.name}}</td>
+                        <td>{{n.fullName}}</td>
+                    </tr>
+                {%endfor%}
+            </table>
+
+            
+
+            
+        </div>
+    
+    
+
+{% endblock %}

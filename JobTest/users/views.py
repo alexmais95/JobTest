@@ -16,7 +16,7 @@ def login_viev(request):
             user = authenticate(request, username=cd['username'], password=cd['password'])
             if user: 
                 login(request, user)
-                return HttpResponseRedirect(reverse('workerstree:workers'))
+                return HttpResponseRedirect('/workerstree/workers/')
     
     else:
         form = LogForm

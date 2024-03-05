@@ -112,15 +112,15 @@
     overflow: hidden;
 }
 
-
-
-.circle {
-    width: 30%;
-    height: 30%;
-    background-color: rgba(0, 0, 0, 0.152);
-    border-radius: 50%;
+.main_list_workers {
+    display: grid;
+    grid-template-columns: 1fr 4fr ;
+    width: 98%;
+    height: 98%;
     
+    padding: 10px;
 }
+
 
 .logg{
     width: 100%;
