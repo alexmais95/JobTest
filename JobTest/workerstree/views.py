@@ -3,6 +3,7 @@ from django.shortcuts import render
 from workerstree.models import *
 from django.db import connection
 from workerstree.form import *
+from django.http import JsonResponse
 
 
 
@@ -18,8 +19,17 @@ def get_position(requests, pk):
     return render(requests, 'workerstree/center/center.html', {'worker': worker})
 
 
+def add_workers_to_db(full_name, job_position, date, email, position):
+    Workers.objects.create(fullName = full_name,
+                           job_position = job_position,
+                           date = date,
+                           email = email,
+                           position = position
+                           )
+    
+
 def add_workers(requests):
-    if requests.method == 'POST':
+    if requests.method == 'POST'and requests.is_ajax():
         form = AddWorker(requests.POST)
         if form.is_valid():
             full_name = form.cleaned_data["fullName"]
@@ -27,13 +37,20 @@ def add_workers(requests):
             date = form.cleaned_data["date"]
             email = form.cleaned_data["email"]
             position = form.cleaned_data["position"]
+            
+            add_workers_to_db(full_name, job_position, date, email, position)
+            form.save()
+            return JsonResponse({'name':full_name}, status = 200)
+        else:
+            errors = form.errors.as_json()
+            return JsonResponse({"errors": errors}, status=400)
 
-
-            return HttpResponseRedirect("/workertree/worker/")
+            
     else:
         form = AddWorker()
 
     return render(requests, 'workerstree/center/add_worker.html', {'form': form})
+
 
 
 
